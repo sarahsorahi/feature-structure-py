@@ -1,17 +1,35 @@
 # feature-structure-py
 
-Custom Python classes for feature structures (FS) and feature maps (FM), used in computational linguistics and natural language processing.
+Custom Python classes for representing **feature structures (FS)** and **feature maps (FM)** — widely used in **computational linguistics**, NLP, and grammar frameworks like HPSG and LFG.
 
-## Features
+---
 
-- Define and manipulate typed or untyped feature structures
-- Unification and subsumption operations
-- Support for nested and reentrant structures
-- Serialization to JSON or AVM-like string
-- Visualization options
+## 📦 Features
 
-## Getting Started
+- Create and manipulate typed or untyped feature structures
+- Support for **reentrancy** (shared substructures)
+- Unification and subsumption (coming soon)
+- Nested structures and deep printing
+- JSON/AVM-style visualization
+- Easily extendable with custom features
 
-This repository will contain the core library, examples, and documentation to work with feature structures and feature maps.
+---
 
-More coming soon!
+## 🚀 Quick Example
+
+```python
+from fs.feature_structure import FeatureStructure
+
+person = FeatureStructure({
+    "CAT": "NP",
+    "NUM": "sg",
+    "PERS": "3",
+    "GENDER": "fem"
+})
+
+clause = FeatureStructure({
+    "SUBJ": person,
+    "TENSE": "past"
+})
+
+print(clause)
